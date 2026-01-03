@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { 
-  Github, 
-  Linkedin, 
-  GraduationCap, 
-  Download, 
+import {
+  Github,
+  Linkedin,
+  GraduationCap,
+  Download,
   ExternalLink,
   MapPin,
   Mail,
   ChevronDown,
   Terminal
 } from "lucide-react";
-import { 
-  useProfile, 
-  useExperience, 
-  useEducation, 
-  useSkills, 
-  usePublications, 
-  useAwards 
+import {
+  useProfile,
+  useExperience,
+  useEducation,
+  useSkills,
+  usePublications,
+  useAwards
 } from "@/hooks/use-profile";
 import { Nav } from "@/components/Nav";
 import { TerminalCard } from "@/components/TerminalCard";
@@ -42,14 +42,29 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-background">
       <div className="scanlines" />
       <div className="grid-bg fixed inset-0 opacity-20 pointer-events-none" />
-      
+
       <Nav />
 
       <main className="relative pt-20 pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
-        
+
         {/* HERO SECTION */}
         <section className="min-h-[85vh] flex flex-col justify-center">
           <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex justify-center lg:hidden pb-4"
+            >
+              <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+                <img
+                  src="/profile.jpg"
+                  alt="Vinay Joshi"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -82,7 +97,7 @@ export default function Home() {
               </div>
             </div>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -91,7 +106,7 @@ export default function Home() {
               {profile?.bio || "Researching at the intersection of artificial intelligence and high-performance systems. Building the future of compute."}
             </motion.p>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
@@ -99,15 +114,15 @@ export default function Home() {
             >
               {profile?.socialLinks && (
                 <>
-                  <a 
-                    href={(profile.socialLinks as any).github} 
+                  <a
+                    href={(profile.socialLinks as any).github}
                     target="_blank"
                     className="flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-white/10"
                   >
                     <Github className="w-5 h-5" />
                     <span className="font-mono-space text-sm">GITHUB</span>
                   </a>
-                  <a 
+                  <a
                     href={(profile.socialLinks as any).linkedin}
                     target="_blank"
                     className="flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-white/10"
@@ -115,7 +130,7 @@ export default function Home() {
                     <Linkedin className="w-5 h-5" />
                     <span className="font-mono-space text-sm">LINKEDIN</span>
                   </a>
-                  <a 
+                  <a
                     href={(profile.socialLinks as any).scholar}
                     target="_blank"
                     className="flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-white/10"
@@ -125,7 +140,7 @@ export default function Home() {
                   </a>
                 </>
               )}
-              <a 
+              <a
                 href="/resume.pdf"
                 className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all duration-300"
               >
@@ -135,7 +150,22 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="absolute top-20 right-8 hidden lg:block"
+          >
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20 shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+              <img
+                src="/profile.jpg"
+                alt="Vinay Joshi"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: [0, 10, 0] }}
             transition={{ delay: 2, duration: 2, repeat: Infinity }}
@@ -148,10 +178,10 @@ export default function Home() {
         {/* EXPERIENCE SECTION */}
         <section id="experience" className="scroll-mt-24">
           <SectionHeader number="01" title="Work Experience" />
-          
+
           <div className="space-y-8 relative">
             <div className="absolute left-0 top-0 bottom-0 w-px bg-white/10 md:left-8" />
-            
+
             {experience?.map((job, idx) => (
               <motion.div
                 key={job.id}
@@ -162,7 +192,7 @@ export default function Home() {
                 className="relative pl-8 md:pl-16 group"
               >
                 <div className="absolute left-[-4px] md:left-[29px] top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
-                
+
                 <div className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <h3 className="text-xl text-white font-bold group-hover:text-primary transition-colors">
                     {job.role}
@@ -172,7 +202,7 @@ export default function Home() {
                     {job.period}
                   </span>
                 </div>
-                
+
                 <p className="text-muted-foreground leading-relaxed max-w-3xl border-l-2 border-white/5 pl-4 hover:border-primary/50 transition-colors">
                   {job.description}
                 </p>
@@ -186,7 +216,7 @@ export default function Home() {
           <h3 className="text-lg font-mono-space text-primary uppercase tracking-wider mb-8">
             // Education_History
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {education?.map((edu, idx) => (
               <TerminalCard key={edu.id} delay={idx} title="ACADEMIC_RECORD">
@@ -207,7 +237,7 @@ export default function Home() {
         {/* SKILLS SECTION */}
         <section id="skills" className="scroll-mt-24">
           <SectionHeader number="02" title="Skills" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills?.map((skillGroup, idx) => (
               <TerminalCard key={skillGroup.id} delay={idx} className="h-full">
@@ -230,7 +260,7 @@ export default function Home() {
         {/* PUBLICATIONS SECTION */}
         <section id="publications" className="scroll-mt-24">
           <SectionHeader number="03" title="Publications" />
-          
+
           <div className="space-y-4">
             {publications?.map((pub, idx) => (
               <TerminalCard key={pub.id} delay={idx} className="group cursor-default">
@@ -245,7 +275,7 @@ export default function Home() {
                     </div>
                   </div>
                   {pub.link && (
-                    <a 
+                    <a
                       href={pub.link}
                       target="_blank"
                       className="self-start p-2 text-primary hover:bg-primary/10 rounded transition-colors"
@@ -262,7 +292,7 @@ export default function Home() {
         {/* AWARDS SECTION */}
         <section id="awards" className="scroll-mt-24">
           <SectionHeader number="04" title="Honors & Awards" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {awards?.map((award, idx) => (
               <motion.div
