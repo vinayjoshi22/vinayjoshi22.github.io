@@ -35,7 +35,7 @@ export function Nav() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="https://github.com/vinayjoshi22/vinayjoshi22.github.io/blob/main/resume.pdf"
             target="_blank"
             className="px-4 py-2 border border-primary text-primary font-mono-space text-sm hover:bg-primary/10 transition-colors"
           >
@@ -73,7 +73,7 @@ export function Nav() {
                 </a>
               ))}
               <a
-                href="/resume.pdf"
+                href="https://github.com/vinayjoshi22/vinayjoshi22.github.io/blob/main/resume.pdf"
                 className="text-sm font-mono-space text-primary"
               >
                 Download Resume

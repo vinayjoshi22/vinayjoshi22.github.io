@@ -141,7 +141,7 @@ export default function Home() {
                 </>
               )}
               <a
-                href="/resume.pdf"
+                href="https://github.com/vinayjoshi22/vinayjoshi22.github.io/blob/main/resume.pdf"
                 className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all duration-300"
               >
                 <Download className="w-5 h-5" />
