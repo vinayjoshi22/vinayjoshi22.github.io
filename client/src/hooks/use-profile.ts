@@ -1,68 +1,58 @@
 import { useQuery } from "@tanstack/react-query";
-import { api } from "@shared/routes";
+import { staticData } from "../data";
 
 export function useProfile() {
   return useQuery({
-    queryKey: [api.profile.get.path],
+    queryKey: ["/api/profile"],
     queryFn: async () => {
-      const res = await fetch(api.profile.get.path);
-      if (!res.ok) throw new Error("Failed to fetch profile");
-      return api.profile.get.responses[200].parse(await res.json());
+      return staticData.profile;
     },
   });
 }
 
 export function useExperience() {
   return useQuery({
-    queryKey: [api.experience.list.path],
+    queryKey: ["/api/experience"],
     queryFn: async () => {
-      const res = await fetch(api.experience.list.path);
-      if (!res.ok) throw new Error("Failed to fetch experience");
-      return api.experience.list.responses[200].parse(await res.json());
+      return staticData.experience;
     },
   });
 }
 
 export function useEducation() {
   return useQuery({
-    queryKey: [api.education.list.path],
+    queryKey: ["/api/education"],
     queryFn: async () => {
-      const res = await fetch(api.education.list.path);
-      if (!res.ok) throw new Error("Failed to fetch education");
-      return api.education.list.responses[200].parse(await res.json());
+      return staticData.education;
     },
   });
 }
 
 export function useSkills() {
   return useQuery({
-    queryKey: [api.skills.list.path],
+    queryKey: ["/api/skills"],
     queryFn: async () => {
-      const res = await fetch(api.skills.list.path);
-      if (!res.ok) throw new Error("Failed to fetch skills");
-      return api.skills.list.responses[200].parse(await res.json());
+      return staticData.skills;
     },
   });
 }
 
 export function usePublications() {
   return useQuery({
-    queryKey: [api.publications.list.path],
+    queryKey: ["/api/publications"],
     queryFn: async () => {
-      const res = await fetch(api.publications.list.path);
-      if (!res.ok) throw new Error("Failed to fetch publications");
-      return api.publications.list.responses[200].parse(await res.json());
+      const sorted = [...staticData.publications].sort((a, b) => b.year.localeCompare(a.year));
+      return sorted;
     },
   });
 }
 
 export function useAwards() {
   return useQuery({
-    queryKey: [api.awards.list.path],
+    queryKey: ["/api/awards"],
     queryFn: async () => {
-      const res = await fetch(api.awards.list.path);
-      if (!res.ok) throw new Error("Failed to fetch awards");
-      return api.awards.list.responses[200].parse(await res.json());
+      return staticData.awards;
     },
   });
 }
+
