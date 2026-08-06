@@ -70,8 +70,7 @@ export const staticData = {
         { id: 2, company: "Microsoft", role: "Principal Applied Scientist", period: "Oct 2025 - Aug 2026", description: "Developing novel customer-centric solutions for Microsoft's core office products.", order: 2 },
         { id: 3, company: "AMD", role: "Member of technical staff/Tech lead", period: "Dec 2024 - Oct 2025", description: "AI for productivity: Leading a team in developing GenAI solution for developer productivity enhancement.", order: 3 },
         { id: 4, company: "Intel Labs", role: "AI Research Scientist", period: "Dec 2021 - Dec 2024", description: "Lead AI Optimization Research (QCQA framework).", order: 4 },
-        { id: 5, company: "SRC Research Scholars Program", role: "Research Scholar", period: "Apr 2020 - Dec 2021", description: "Hybrid In-memory Computing research.", order: 5 },
-        { id: 6, company: "IBM Research Labs Zurich", role: "Visiting Research Scientist", period: "Jun 2018 - Dec 2019", description: "AI for Hardware Acceleration.", order: 6 }
+        { id: 5, company: "IBM Research Labs Zurich", role: "Visiting Research Scientist", period: "Jun 2018 - Dec 2019", description: "AI for Hardware Acceleration.", order: 5 }
     ] as Experience[],
 
     education: [
