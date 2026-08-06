@@ -54,7 +54,7 @@ export const staticData = {
   profile: {
     id: 1,
     name: "Vinay Joshi",
-    title: "Principal Applied Scientist",
+    title: "Staff Software Engineer",
     bio: "AI Research Scientist (Ph.D.) with deep expertise in large language and vision models, architecture, training, inference, and evaluations. Strong record of publications, patents, and leading collaborative AI projects with global teams.",
     location: "Bengaluru, Karnataka, India",
     email: "vinayjoshi.iitb@gmail.com",
@@ -66,11 +66,12 @@ export const staticData = {
   } as Profile,
 
   experience: [
-    { id: 1, company: "Microsoft", role: "Principal Applied Scientist", period: "Oct 2025 - Present", description: "Developing novel customer-centric solutions for Microsoft's core office products.", order: 1 },
-    { id: 2, company: "AMD", role: "Member of technical staff/Tech lead", period: "Dec 2024 - Oct 2025", description: "AI for productivity: Leading a team in developing GenAI solution for developer productivity enhancement.", order: 2 },
-    { id: 3, company: "Intel Labs", role: "AI Research Scientist", period: "Dec 2021 - Dec 2024", description: "Lead AI Optimization Research (QCQA framework).", order: 3 },
-    { id: 4, company: "SRC Research Scholars Program", role: "Research Scholar", period: "Apr 2020 - Dec 2021", description: "Hybrid In-memory Computing research.", order: 4 },
-    { id: 5, company: "IBM Research Labs Zurich", role: "Visiting Research Scientist", period: "Jun 2018 - Dec 2019", description: "AI for Hardware Acceleration.", order: 5 }
+    { id: 1, company: "Google", role: "Staff Software Engineer", period: "Aug 2026 - Present", description: "Leading research and development initiatives in AI systems and software engineering.", order: 1 },
+    { id: 2, company: "Microsoft", role: "Principal Applied Scientist", period: "Oct 2025 - Aug 2026", description: "Developing novel customer-centric solutions for Microsoft's core office products.", order: 2 },
+    { id: 3, company: "AMD", role: "Member of technical staff/Tech lead", period: "Dec 2024 - Oct 2025", description: "AI for productivity: Leading a team in developing GenAI solution for developer productivity enhancement.", order: 3 },
+    { id: 4, company: "Intel Labs", role: "AI Research Scientist", period: "Dec 2021 - Dec 2024", description: "Lead AI Optimization Research (QCQA framework).", order: 4 },
+    { id: 5, company: "SRC Research Scholars Program", role: "Research Scholar", period: "Apr 2020 - Dec 2021", description: "Hybrid In-memory Computing research.", order: 5 },
+    { id: 6, company: "IBM Research Labs Zurich", role: "Visiting Research Scientist", period: "Jun 2018 - Dec 2019", description: "AI for Hardware Acceleration.", order: 6 }
   ] as Experience[],
 
   education: [
